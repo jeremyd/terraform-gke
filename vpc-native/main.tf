@@ -79,5 +79,12 @@ resource "google_container_cluster" "cluster" {
       subnetwork,
     ]
   }
+
+  dynamic "workload_identity_config" {
+    for_each = var.workload_identity_namespace == "" ? [] : [var.workload_identity_namespace]
+    content {
+      identity_namespace = workload_identity_config.value
+    }
+  }
 }
 

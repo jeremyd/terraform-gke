@@ -74,3 +74,8 @@ variable "preemptible_nodes" {
   description = "Whether to use preemptible nodes"
   default     = false
 }
+
+variable "service_account" {
+  description = "Service account to use for node pool VMs"
+  default     = ""
+}

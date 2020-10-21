@@ -73,3 +73,9 @@ variable "logging_service" {
   description = "The logging service to write logs to"
   default     = "logging.googleapis.com/kubernetes"
 }
+
+variable "workload_identity_namespace" {
+  description = "Enables workload identity using the given namespace (Project name)"
+  default     = ""
+}
+

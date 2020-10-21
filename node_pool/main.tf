@@ -51,13 +51,14 @@ resource "google_container_node_pool" "node_pool" {
   }
 
   node_config {
-    image_type   = "COS"
-    disk_size_gb = var.disk_size_in_gb
-    machine_type = var.machine_type
-    labels       = var.node_labels
-    disk_type    = var.disk_type
-    tags         = var.node_tags
-    preemptible  = var.preemptible_nodes
+    image_type      = "COS"
+    disk_size_gb    = var.disk_size_in_gb
+    machine_type    = var.machine_type
+    labels          = var.node_labels
+    disk_type       = var.disk_type
+    tags            = var.node_tags
+    preemptible     = var.preemptible_nodes
+    service_account = var.service_account
 
     oauth_scopes = concat(local.base_oauth_scope, var.additional_oauth_scopes)
   }
